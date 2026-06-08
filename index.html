@@ -3,26 +3,31 @@
 <head>
 <meta charset="utf-8">
 <title>Payment</title>
+
 <script>
 window.onload = function() {
-  const params = new URLSearchParams(window.location.search);
-  const amount = params.get("amount") || "0";
+    const params = new URLSearchParams(window.location.search);
+    const amount = params.get("amount") || "0";
 
-  window.location.href =
-    `upi://pay?pa=s737013359663311@slc&pn=MS WORDSHOP&am=${amount}&cu=INR`;
+    const upiLink =
+        `upi://pay?pa=s7370133596633111@slc&pn=MS%20WORDSHOP&am=${amount}&cu=INR`;
+
+    window.location.href = upiLink;
+
+    document.getElementById("paylink").href = upiLink;
 };
 </script>
+
 </head>
 <body>
+
 <h2>Opening UPI App...</h2>
-<a id="paylink">Open Payment App</a>
 
-<script>
-const params = new URLSearchParams(window.location.search);
-const amount = params.get("amount") || "0";
+<p>If app does not open, tap below:</p>
 
-document.getElementById("paylink").href =
-  `upi://pay?pa=s737013359663311@slc&pn=MS WORDSHOP&am=${amount}&cu=INR`;
-</script>
+<a id="paylink" href="#">
+    Open Payment App
+</a>
+
 </body>
 </html>
