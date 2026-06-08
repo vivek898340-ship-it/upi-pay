@@ -10,7 +10,7 @@ window.onload = function() {
     const amount = params.get("amount") || "0";
 
     const upiLink =
-        `upi://pay?pa=s7370133596633111@slc&pn=MS%20WORDSHOP&am=${amount}&cu=INR`;
+        "upi://pay?pa=s7370133596633111@slc&pn=MS%20WORDSHOP&am=" + amount + "&cu=INR";
 
     window.location.href = upiLink;
 
